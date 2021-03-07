@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
-import { getQuote, getProfile } from '../../API/stockAPI';
+import { getQuote } from '../../API/quoteAPI';
 
-const DisplayQuote = () => {
+const QuoteEntryForm = () => {
     const [getQuoteResult, setQuoteResult] = useState("");
     const [symbol, setSymbol] = useState("");
 
@@ -24,10 +24,12 @@ const DisplayQuote = () => {
                 <button onClick={handleQuoteButtonClick}>Get Quote</button>
             </div>
             <div>
-                <input type="text" value={getQuoteResult}></input>
+                <div><label>Latest Price $:</label></div>
+                <div><label>{getQuoteResult}</label></div>
+
             </div>
         </div>
     );
 };
 
-export default DisplayQuote;
+export default QuoteEntryForm;

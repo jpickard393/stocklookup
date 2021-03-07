@@ -1,23 +1,4 @@
-const getQuote = (symbol) => {
-    const apiKey = "c0tl3kf48v6r4maesrpg";
-    const url =
-        "https://finnhub.io/api/v1/quote?symbol=" + symbol + "&token=" + apiKey;
-
-    return fetchData(url);
-}
-
-const getProfile = (symbol) => {
-    const apiKey = "c0tl3kf48v6r4maesrpg";
-    const url =
-        "https://finnhub.io/api/v1/stock/profile2?symbol=" +
-        symbol +
-        "&token=" +
-        apiKey;
-
-    return fetchData(url);
-}
-
-const fetchData = (url) => {
+export const fetchData = (url) => {
     return fetch(url, {
         method: "GET"
     })
@@ -37,5 +18,3 @@ const fetchData = (url) => {
             console.warn("Something went wrong.", err);
         });
 };
-
-export { getQuote, getProfile };

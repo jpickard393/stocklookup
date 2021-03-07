@@ -1,10 +1,10 @@
 import './App.css';
-import DisplayQuote from './components/DisplayQuote/DisplayQuote';
+import QuoteEntryForm from './components/QuoteEntryForm/QuoteEntryForm';
 
 function App() {
   return (
     <div className="App">
-      <DisplayQuote></DisplayQuote>
+      <QuoteEntryForm></QuoteEntryForm>
     </div>
   );
 }
