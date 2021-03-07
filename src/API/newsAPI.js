@@ -7,8 +7,10 @@ const buildUrl = (symbol, urlAction, fromDate, toDate) => {
     return url;
 };
 
-const getNews = (symbol, start, end) => {
-    return "not implemented";
-};
+function getNews(symbol, startDate, endDate) {
+    const urlAction = "company-news";
+    const url = buildUrl(symbol, urlAction, startDate, endDate);
+    return fetchData(url);
+}
 
 export default getNews;
