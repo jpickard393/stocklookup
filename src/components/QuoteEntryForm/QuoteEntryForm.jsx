@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 import { getQuote } from '../../API/quoteAPI';
+import "./styles.scss";
 
 const QuoteEntryForm = () => {
     const [getQuoteResult, setQuoteResult] = useState("");
@@ -14,8 +15,8 @@ const QuoteEntryForm = () => {
     };
 
     return (
-        <div>
-            <div className="quote-input-container">
+        <div className="quote-input-container">
+            <div>
                 <label>Quote
                     <input id="quote-input" type="text" value={symbol} onChange={handleSymbolChange}></input>
                 </label>
@@ -24,9 +25,7 @@ const QuoteEntryForm = () => {
                 <button onClick={handleQuoteButtonClick}>Get Quote</button>
             </div>
             <div>
-                <div><label>Latest Price $:</label></div>
-                <div><label>{getQuoteResult}</label></div>
-
+                <div><label>Latest Price $:</label><label>{getQuoteResult}</label></div>
             </div>
         </div>
     );

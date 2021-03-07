@@ -1,4 +1,4 @@
-import './App.css';
+import './styles.scss';
 import QuoteEntryForm from './components/QuoteEntryForm/QuoteEntryForm';
 
 function App() {
