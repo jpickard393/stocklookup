@@ -1,10 +1,13 @@
+import "./styles/base/_base.scss";
 import './styles.scss';
-import QuoteEntryForm from './components/QuoteEntryForm/QuoteEntryForm';
+//import { Container } from "reactstrap";
+import MenuBar from "../src/components/Menubar/MenuBar";
 
 function App() {
   return (
-    <div className="App">
-      <QuoteEntryForm></QuoteEntryForm>
+    <div className="container">
+      <MenuBar></MenuBar>
+      {/* <QuoteEntryForm></QuoteEntryForm> */}
     </div>
   );
 }
