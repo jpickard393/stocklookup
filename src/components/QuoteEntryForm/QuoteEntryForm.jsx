@@ -8,7 +8,7 @@ const QuoteEntryForm = () => {
     const [symbol, setSymbol] = useState("");
 
     const handleQuoteButtonClick = () => {
-        getQuote(symbol.toUpperCase()).then((quote) => setQuoteResult(quote.l));
+        getQuote(symbol.toUpperCase()).then((quote) => setQuoteResult(quote));
     };
 
     const handleSymbolChange = (e) => {
