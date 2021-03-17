@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 import { getQuote } from '../../API/quoteAPI';
+import CompanyQuote from "../CompanyQuote/CompanyQuote";
 import "./styles.scss";
 
 const QuoteEntryForm = () => {
@@ -15,19 +16,22 @@ const QuoteEntryForm = () => {
     };
 
     return (
-        <div className="quote-input-container">
-            <div>
-                <label>Quote
-                    <input id="quote-input" type="text" value={symbol} onChange={handleSymbolChange}></input>
-                </label>
+        <div>
+            <div className="quote-input-container">
+                <div className="input-group">
+                    <input type="text" className="form-control" placeholder="Get Quote" onChange={handleSymbolChange} />
+                    <div className="input-group-append">
+                        <button className="btn btn-secondary" type="button" onClick={handleQuoteButtonClick}>
+                            <i className="fa fa-search">Search</i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <button onClick={handleQuoteButtonClick}>Get Quote</button>
-            </div>
-            <div>
-                <div><label>Latest Price $:</label><label>{getQuoteResult}</label></div>
-            </div>
+            {getQuoteResult &&
+                <CompanyQuote quote={getQuoteResult}></CompanyQuote>
+            }
         </div>
+
     );
 };
 

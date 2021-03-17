@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types"
     ; import {
         Collapse,
@@ -19,18 +20,18 @@ const MenuBar = (props) => {
         <div>
             <Navbar color="light" light expand="md">
                 <NavbarToggler onClick={toggle} />
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
+                <NavbarBrand href="/">Stock Quotes</NavbarBrand>
 
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="me-auto" navbar>
                         <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
+                            <NavLink><Link to="/QuoteEntryForm" className="NavLink">Get a Quote</Link></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                            <NavLink><Link to="/MarketNews/" className="NavLink">Market News</Link></NavLink>
                         </NavItem>
+
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
                 </Collapse>
             </Navbar>
         </div>
