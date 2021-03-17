@@ -1,19 +1,22 @@
 import { React } from 'react';
 import "./styles.scss";
 import PropTypes from "prop-types"
+import { Container } from "reactstrap";
 
 // this screen needs to poll on intervals
-
+// this box should display beside on a two column layout
 const CompanyQuote = (props) => {
     return (
-        <div className="quote-container">
-            <div><label>Open{props.quote.o}</label></div>
-            <div><label>Close{props.quote.c}</label></div>
-            <div><label>High{props.quote.h}</label></div>
-            <div><label>Low{props.quote.l}</label></div>
-            <div><label>Previous Close{props.quote.pc}</label></div>
-            {/* calculation for up from day */}
-        </div>
+        <Container className="quote-container">
+            <div>
+                <div><label className="company-quote-label">Open <span className="quote-item quote-open">{props.quote.o}</span></label></div>
+                <div><label className="company-quote-label">High <span className="quote-item quote-high">{props.quote.h}</span></label></div>
+                <div><label className="company-quote-label">Low <span className="quote-item quote-low">{props.quote.l}</span></label></div>
+                <div><label className="company-quote-label">Close <span className="quote-item quote-close">{props.quote.c}</span></label></div>
+                <div><label className="company-quote-label">Previous Close <span className="quote-item quote-prev">{props.quote.pc}</span></label></div>
+                {/* calculation for up from day */}
+            </div>
+        </Container>
     );
 }
 CompanyQuote.propTypes = {

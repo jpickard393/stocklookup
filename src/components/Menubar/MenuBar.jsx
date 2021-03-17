@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types"
-    ; import {
-        Collapse,
-        Navbar,
-        NavbarToggler,
-        NavbarBrand,
-        Nav,
-        NavItem,
-        NavLink,
-        NavbarText
-    } from 'reactstrap';
+import PropTypes from "prop-types";
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    NavbarText
+} from 'reactstrap';
 
 const MenuBar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +26,9 @@ const MenuBar = (props) => {
                     <Nav className="me-auto" navbar>
                         <NavItem>
                             <NavLink><Link to="/QuoteEntryForm" className="NavLink">Get a Quote</Link></NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink><Link to="/QuoteEntryForm" className="NavLink">Search by Company</Link></NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink><Link to="/MarketNews/" className="NavLink">Market News</Link></NavLink>
