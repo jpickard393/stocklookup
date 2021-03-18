@@ -1,14 +1,14 @@
 import { React, useState } from 'react';
-import { getQuote } from '../../API/quoteAPI';
-import CompanyQuote from "../CompanyQuote/CompanyQuote";
+import getQuote from '../../API/quoteAPI';
+import CompanyDetails from "../CompanyDetails/index";
 import "./styles.scss";
 
 const QuoteEntryForm = () => {
-    const [getQuoteResult, setQuoteResult] = useState("");
+    const [quote, setQuote] = useState("");
     const [symbol, setSymbol] = useState("");
 
     const handleQuoteButtonClick = () => {
-        getQuote(symbol.toUpperCase()).then((quote) => setQuoteResult(quote));
+        getQuote(symbol.toUpperCase()).then((quote) => setQuote(quote));
     };
 
     const handleSymbolChange = (e) => {
@@ -27,8 +27,8 @@ const QuoteEntryForm = () => {
                     </div>
                 </div>
             </div>
-            {getQuoteResult &&
-                <CompanyQuote quote={getQuoteResult}></CompanyQuote>
+            {quote &&
+                <CompanyDetails quote={quote} symbol={symbol}></CompanyDetails>
             }
         </div>
 

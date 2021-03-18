@@ -7,10 +7,4 @@ const getQuote = (symbol) => {
     return fetchData(url);
 }
 
-const search = (symbol) => {
-    const urlAction = "search";
-    const url = buildUrl(symbol, urlAction);
-    return fetchData(url);
-}
-
-export { getQuote, search };
+export default getQuote;

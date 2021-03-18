@@ -3,8 +3,6 @@ import "./styles.scss";
 import PropTypes from "prop-types"
 import { Container } from "reactstrap";
 
-// this screen needs to poll on intervals
-// this box should display beside on a two column layout
 const CompanyQuote = (props) => {
     return (
         <Container className="quote-container">
