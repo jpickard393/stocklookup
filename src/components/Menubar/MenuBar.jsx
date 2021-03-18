@@ -33,6 +33,9 @@ const MenuBar = (props) => {
                         <NavItem>
                             <NavLink><Link to="/MarketNews/" className="NavLink">Market News</Link></NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink><Link to="/WatchList/" className="NavLink">My Watch List</Link></NavLink>
+                        </NavItem>
 
                     </Nav>
                 </Collapse>
