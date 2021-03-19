@@ -7,6 +7,11 @@ export const buildNewsUrl = (symbol, urlAction, fromDate, toDate) => {
     return url;
 };
 
+export const buildMarketNewsUrl = (urlAction) => {
+    const url = `${baseUrl}${urlAction}${"?category=general"}${"&token="}${apiKey}`;
+    return url;
+};
+
 export const buildQuoteUrl = (symbol, urlAction) => {
     const url = `${baseUrl}${urlAction}${"?symbol="}${symbol}${"&token="}${apiKey}`;
     return url;

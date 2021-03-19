@@ -18,8 +18,18 @@ const CompanyProfile = (props) => {
 
     return profile && (
         <Container className="company-profile-container">
-            <label>{profile.country}</label>
-            <label>{profile.exchange}</label>
+            <div>
+                <img className="profile-logo" src={profile.logo} alt="logo"></img>
+                <label>{profile.name}</label>
+                <label>{profile.ticker}</label>
+            </div>
+            <div>
+                <label>{profile.exchange}</label>
+                <label>{profile.country}</label>
+                <label>{profile.marketCapitalization}</label>
+            </div>
+
+
         </Container>
     );
 }
