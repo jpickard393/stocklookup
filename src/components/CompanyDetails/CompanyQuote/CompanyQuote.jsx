@@ -3,7 +3,8 @@ import "./styles.scss";
 import PropTypes from "prop-types"
 import { Container } from "reactstrap";
 
-const CompanyQuote = (quote) => {
+const CompanyQuote = (props) => {
+    const { quote } = props;
     return (
         <>
             <Container className="quote-container">

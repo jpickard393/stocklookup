@@ -3,8 +3,8 @@ import "./styles.scss";
 import { Container } from "reactstrap";
 import getProfile from "../../../API/profileAPI";
 
-const CompanyDetails = (props) => {
-    const [profile, setProfile] = useState();
+const CompanyProfile = (props) => {
+    const [profile, setProfile] = useState("");
 
     const getCompanyProfile = (symbol) => {
         getProfile(symbol.toUpperCase()).then((profile) => setProfile(profile));
@@ -16,11 +16,11 @@ const CompanyDetails = (props) => {
         }
     }, [props.symbol]);
 
-    return props.profile && (
+    return profile && (
         <Container className="company-profile-container">
             <label>{profile.country}</label>
             <label>{profile.exchange}</label>
         </Container>
     );
 }
-export default CompanyDetails
+export default CompanyProfile
