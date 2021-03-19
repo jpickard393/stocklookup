@@ -19,10 +19,13 @@ const NavBarToggler = (props) => {
                             <NavLink><Link to="/QuoteEntryForm" className="NavLink">Get a Quote</Link></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink><Link to="/QuoteEntryForm" className="NavLink">Search by Company</Link></NavLink>
+                            <NavLink><Link to="/QuoteEntryForm" className="NavLink">Search</Link></NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink><Link to="/MarketNews/" className="NavLink">Market News</Link></NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink><Link to="/WatchList/" className="NavLink">My Watch List</Link></NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>

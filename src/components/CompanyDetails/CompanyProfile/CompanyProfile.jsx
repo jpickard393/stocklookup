@@ -16,8 +16,8 @@ const CompanyDetails = (props) => {
         }
     }, [props.symbol]);
 
-    return profile && (
-        <Container>
+    return props.profile && (
+        <Container className="company-profile-container">
             <label>{profile.country}</label>
             <label>{profile.exchange}</label>
         </Container>

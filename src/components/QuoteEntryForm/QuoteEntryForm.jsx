@@ -27,8 +27,8 @@ const QuoteEntryForm = () => {
                     </div>
                 </div>
             </div>
-            {quote &&
-                <CompanyDetails quote={quote} symbol={symbol}></CompanyDetails>
+            {quote ?
+                (<CompanyDetails quote={quote} symbol={symbol}></CompanyDetails>) : ""
             }
         </div>
 

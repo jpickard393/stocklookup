@@ -1,10 +1,9 @@
 import { fetchData } from "./fetchData";
-import { buildUrl } from "../API/buildURLs";
+import { buildQuoteUrl } from "../API/buildURLs";
 
 const getProfile = (symbol) => {
     const urlAction = "stock/profile2";
-    const url = buildUrl(symbol, urlAction);
-
+    const url = buildQuoteUrl(symbol, urlAction);
     return fetchData(url);
 }
 
