@@ -1,3 +1,10 @@
+@import "../../styles/base/base";
 .company-details-container {
     display:flex;
+    justify-content: space-evenly;
+
+    @media (max-width: $medium-breakpoint) {
+        margin-top: 10px;
+        flex-flow: wrap;
+    }
 }

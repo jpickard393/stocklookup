@@ -1,22 +1,26 @@
 import { React, useState } from 'react';
 import getQuote from '../../API/quoteAPI';
 import CompanyDetails from "../CompanyDetails/index";
+import { Container } from "reactstrap";
 import "./styles.scss";
 
 const QuoteEntryForm = () => {
     const [quote, setQuote] = useState("");
     const [symbol, setSymbol] = useState("");
+    const [submit, setSubmit] = useState(false);
 
     const handleQuoteButtonClick = () => {
         getQuote(symbol.toUpperCase()).then((quote) => setQuote(quote));
+        setSubmit(true);
     };
 
     const handleSymbolChange = (e) => {
+        setSubmit(false);
         setSymbol(e.target.value);
     };
 
     return (
-        <div>
+        <Container>
             <div className="quote-input-container">
                 <div className="input-group">
                     <input type="text" className="form-control" placeholder="Get Quote" onChange={handleSymbolChange} />
@@ -27,10 +31,10 @@ const QuoteEntryForm = () => {
                     </div>
                 </div>
             </div>
-            {quote &&
-                <CompanyDetails quote={quote} symbol={symbol}></CompanyDetails>
+            {quote && submit ?
+                (<CompanyDetails quote={quote} symbol={symbol}></CompanyDetails>) : ""
             }
-        </div>
+        </Container>
 
     );
 };
