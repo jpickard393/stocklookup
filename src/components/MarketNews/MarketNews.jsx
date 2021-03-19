@@ -1,19 +1,19 @@
 import { React, useEffect, useState } from "react";
 import { getMarketNews } from "../../API/newsAPI";
+import MarketNewsItem from "./MarketNewsItem/index";
 
 import { Container } from "reactstrap";
 
 const MarketNews = () => {
-
-    const [marketNews, setMarketNews] = useState("");
+    const [marketNews, setMarketNews] = useState([]);
 
     useEffect(() => {
         getMarketNews().then((marketNews) => setMarketNews(marketNews));
-    });
+    }, [marketNews]);
 
-    return (
+    return marketNews && (
         <Container>
-            <div>{marketNews}</div>
+            <MarketNewsItem marketNews={marketNews}></MarketNewsItem>
         </Container>
     );
 }

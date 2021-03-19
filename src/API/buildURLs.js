@@ -8,7 +8,7 @@ export const buildNewsUrl = (symbol, urlAction, fromDate, toDate) => {
 };
 
 export const buildMarketNewsUrl = (urlAction) => {
-    const url = `${baseUrl}${urlAction}${"?category=general"}${"&token="}${apiKey}`;
+    const url = `${baseUrl}${urlAction}${"?category=top news"}${"&token="}${apiKey}`;
     return url;
 };
 
