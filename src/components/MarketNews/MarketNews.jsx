@@ -1,21 +1,28 @@
-import { React, useEffect, useState } from "react";
+import React, { Component } from "react";
 import { getMarketNews } from "../../API/newsAPI";
 import MarketNewsItem from "./MarketNewsItem/index";
-
 import { Container } from "reactstrap";
+import "./styles.scss";
 
-const MarketNews = () => {
-    const [marketNews, setMarketNews] = useState([]);
+class MarketNews extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            marketNews: []
+        };
+    }
 
-    useEffect(() => {
-        getMarketNews().then((marketNews) => setMarketNews(marketNews));
-    }, [marketNews]);
+    componentDidMount() {
+        getMarketNews().then((res) => this.setState({ marketNews: res }));
+    }
 
-    return marketNews && (
-        <Container>
-            <MarketNewsItem marketNews={marketNews}></MarketNewsItem>
-        </Container>
-    );
+    render() {
+        return (this.state.marketNews.map((item) =>
+            <Container className="market-news-container">
+                <MarketNewsItem id={item.id} headline={item.headline} image={item.image} summary={item.summary}></MarketNewsItem>
+            </Container>
+        ));
+    }
 }
 
 export default MarketNews;

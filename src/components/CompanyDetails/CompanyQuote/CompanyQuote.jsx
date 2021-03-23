@@ -9,12 +9,34 @@ const CompanyQuote = (props) => {
         <>
             <Container className="quote-container">
                 <div>
-                    <div><label className="company-quote-label">Open <span className="quote-item quote-open">{quote.o}</span></label></div>
-                    <div><label className="company-quote-label">High <span className="quote-item quote-high">{quote.h}</span></label></div>
-                    <div><label className="company-quote-label">Low <span className="quote-item quote-low">{quote.l}</span></label></div>
-                    <div><label className="company-quote-label">Close <span className="quote-item quote-close">{quote.c}</span></label></div>
-                    <div><label className="company-quote-label">Previous Close <span className="quote-item quote-prev">{quote.pc}</span></label></div>
-                    {/* calculation for up from day */}
+                    <h4 className="quote-title">Quote (USD)</h4>
+                </div>
+
+                <div className="quote-details">
+                    <div className="company-quote-container">
+                        <div><label className="company-quote-label">Open </label></div>
+                        <div className="quote-item"><label className="quote-open">{quote.o}</label></div>
+                    </div>
+
+                    <div className="company-quote-container">
+                        <div><label className="company-quote-label">High </label></div>
+                        <div className="quote-item"><label className="quote-open">{quote.h}</label></div>
+                    </div>
+
+                    <div className="company-quote-container">
+                        <div><label className="company-quote-label">Low </label></div>
+                        <div className="quote-item"><label className="quote-open">{quote.l}</label></div>
+                    </div>
+
+                    <div className="company-quote-container">
+                        <div><label className="company-quote-label">Close </label></div>
+                        <div className="quote-item"><label className="quote-open">{quote.c}</label></div>
+                    </div>
+
+                    <div className="company-quote-container">
+                        <div><label className="company-quote-label">Previous Close </label></div>
+                        <div className="quote-item"><label className="quote-open">{quote.pc}</label></div>
+                    </div>
                 </div>
             </Container>
         </>
