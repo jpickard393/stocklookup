@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types"
+import "./styles.scss";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 const NavBarToggler = (props) => {
@@ -9,8 +10,8 @@ const NavBarToggler = (props) => {
 
     return (
         <div>
-            <Navbar color="faded" light>
-                <NavbarBrand href="/" className="me-auto">reactstrap</NavbarBrand>
+            <Navbar className="navbar" color="faded">
+                <NavbarBrand className="brand me-auto" href="/">reactstrap</NavbarBrand>
                 <NavbarToggler onClick={toggleNavbar} className="me-2" />
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>

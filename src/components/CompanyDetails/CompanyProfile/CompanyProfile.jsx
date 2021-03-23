@@ -26,7 +26,10 @@ const CompanyProfile = (props) => {
                 </div>
             </div>
             <div className="cp-logo">
-                <img className="profile-logo" src={profile.logo} alt="logo"></img>
+                {profile.logo ?
+                    <img className="profile-logo" src={profile.logo} alt="logo"></img>
+                    : <div className="no-image">No Image Available</div>
+                }
             </div>
             <div className="cp-details">
                 <div>

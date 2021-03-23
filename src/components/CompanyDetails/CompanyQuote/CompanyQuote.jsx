@@ -14,6 +14,10 @@ const CompanyQuote = (props) => {
 
                 <div className="quote-details">
                     <div className="company-quote-container">
+                        <div><label className="company-quote-label">Close </label></div>
+                        <div className="quote-item"><label className="quote-open">{quote.c}</label></div>
+                    </div>
+                    <div className="company-quote-container">
                         <div><label className="company-quote-label">Open </label></div>
                         <div className="quote-item"><label className="quote-open">{quote.o}</label></div>
                     </div>
@@ -27,12 +31,6 @@ const CompanyQuote = (props) => {
                         <div><label className="company-quote-label">Low </label></div>
                         <div className="quote-item"><label className="quote-open">{quote.l}</label></div>
                     </div>
-
-                    <div className="company-quote-container">
-                        <div><label className="company-quote-label">Close </label></div>
-                        <div className="quote-item"><label className="quote-open">{quote.c}</label></div>
-                    </div>
-
                     <div className="company-quote-container">
                         <div><label className="company-quote-label">Previous Close </label></div>
                         <div className="quote-item"><label className="quote-open">{quote.pc}</label></div>

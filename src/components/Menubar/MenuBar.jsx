@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import "./styles.scss";
 import {
     Collapse,
     Navbar,
@@ -18,9 +19,9 @@ const MenuBar = (props) => {
 
     return (
         <div>
-            <Navbar color="light" light expand="md">
+            <Navbar className="navbar" dark expand="md">
                 <NavbarToggler onClick={toggle} />
-                <NavbarBrand href="/">Stock Quotes</NavbarBrand>
+                <NavbarBrand className="brand" href="/">Stock Quotes</NavbarBrand>
 
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="me-auto" navbar>
