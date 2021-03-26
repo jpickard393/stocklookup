@@ -7,15 +7,20 @@ import "./styles.scss";
 const QuoteEntryForm = () => {
     const [quote, setQuote] = useState("");
     const [symbol, setSymbol] = useState("");
-    const [submit, setSubmit] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [message, setMessage] = useState("");
 
     const handleQuoteButtonClick = () => {
-        getQuote(symbol.toUpperCase()).then((quote) => setQuote(quote));
-        setSubmit(true);
+        setMessage("Searching.....");
+        getQuote(symbol.toUpperCase()).then((quote) => {
+            // if quotes closing price is 0 then not found
+            quote.c !== 0 ? setQuote(quote) : setQuote("");
+            setMessage("Nothing Found for that symbol");
+        });
+        setSubmitted(true);
     };
 
     const handleSymbolChange = (e) => {
-        setSubmit(false);
         setSymbol(e.target.value);
     };
 
@@ -31,9 +36,12 @@ const QuoteEntryForm = () => {
                     </div>
                 </div>
             </div>
-            {quote && submit ?
-                (<CompanyDetails quote={quote} symbol={symbol}></CompanyDetails>) : ""
-            }
+            {submitted ? (
+                quote ? (<CompanyDetails quote={quote} symbol={symbol}></CompanyDetails>) 
+                : <div className="lookup-message-container">
+                    <h3 className="lookup-message">{message}</h3>
+                </div>
+            ) : ""}
         </Container>
 
     );
