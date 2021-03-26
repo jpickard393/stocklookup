@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import getQuote from '../../API/quoteAPI';
 import CompanyDetails from "../CompanyDetails/index";
 import { Container } from "reactstrap";
@@ -11,16 +11,24 @@ const QuoteEntryForm = () => {
     const [message, setMessage] = useState("");
 
     const handleQuoteButtonClick = () => {
+        setQuote("");
         setMessage("Searching.....");
-        getQuote(symbol.toUpperCase()).then((quote) => {
-            // if quotes closing price is 0 then not found
-            quote.c !== 0 ? setQuote(quote) : setQuote("");
-            setMessage("Nothing Found for that symbol");
-        });
+        getQuote(symbol.toUpperCase()).then((quote) => checkSymbolResult(quote));
         setSubmitted(true);
     };
 
+    const checkSymbolResult = (quote) => {
+        // if quotes closing price is 0 then nothing found
+        if(quote.c !== 0){
+            setQuote(quote) 
+        } else {
+            setQuote("");
+            setMessage("Nothing Found for that symbol");
+        }
+    }
+
     const handleSymbolChange = (e) => {
+        setSubmitted(false);
         setSymbol(e.target.value);
     };
 
