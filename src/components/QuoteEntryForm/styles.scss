@@ -1,21 +1,20 @@
 @import "../../styles/base/base";
 .quote-input-container {
     display: flex;
-    margin: 5px auto;
+    margin: 15px auto;
     justify-content: center;
-}
 
+    @media (min-width: $medium-breakpoint) {
+        margin-top: 10px;
+    }
+}
+    
 .input-group {
+    margin: 10px;
     @media (min-width: $large-breakpoint) {
         width: 50%;
     }
 }
  .form-control {
     padding-left: 2.375rem;
-}
-.quote-input-container {
-    @media (min-width: $medium-breakpoint) {
-        margin-top: 10px;
-    }
-
 }

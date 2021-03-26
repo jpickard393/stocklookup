@@ -1,0 +1,25 @@
+@import "../../../styles/base/base";
+
+.company-profile-container {
+    margin-top:30px;
+    .cp-company-name {
+        color:seagreen;
+        margin-bottom:20px;
+    }
+    .cd-label {
+        font-size:$font-size;
+        font-weight: bold;
+        margin-right:10px;
+    }
+}
+
+.profile-logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.no-image {
+    margin: 10px;
+    color:darkgray;
+    font-weight:200;
+}

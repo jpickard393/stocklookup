@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types"
-    ; import {
-        Collapse,
-        Navbar,
-        NavbarToggler,
-        NavbarBrand,
-        Nav,
-        NavItem,
-        NavLink,
-        NavbarText
-    } from 'reactstrap';
+import PropTypes from "prop-types";
+import "./styles.scss";
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    NavbarText
+} from 'reactstrap';
 
 const MenuBar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +19,9 @@ const MenuBar = (props) => {
 
     return (
         <div>
-            <Navbar color="light" light expand="md">
+            <Navbar className="navbar" dark expand="md">
                 <NavbarToggler onClick={toggle} />
-                <NavbarBrand href="/">Stock Quotes</NavbarBrand>
+                <NavbarBrand className="brand" href="/">Stock Quotes</NavbarBrand>
 
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="me-auto" navbar>
@@ -28,7 +29,13 @@ const MenuBar = (props) => {
                             <NavLink><Link to="/QuoteEntryForm" className="NavLink">Get a Quote</Link></NavLink>
                         </NavItem>
                         <NavItem>
+                            <NavLink><Link to="/SearchForm" className="NavLink">Search</Link></NavLink>
+                        </NavItem>
+                        <NavItem>
                             <NavLink><Link to="/MarketNews/" className="NavLink">Market News</Link></NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink><Link to="/WatchList/" className="NavLink">My Watch List</Link></NavLink>
                         </NavItem>
 
                     </Nav>
