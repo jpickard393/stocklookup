@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from "react";
 import WatchListItem from "./WatchListItem/WatchListItem";
-import {getAllWatchlistItems, removeItemFromWatchList, addItemToWatchList} from "../../common/watchList";
+import {getAllWatchlistItems, removeItemFromWatchList} from "../../common/watchList";
 import { Container } from "reactstrap";
 import "./styles.scss";
 

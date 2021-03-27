@@ -4,7 +4,21 @@ import getProfile from "../API/profileAPI";
 let watchListItems = [];
 
 export const addItemToWatchList = (symbol) => {
-    localStorage.setItem(symbol.toUpperCase(), symbol.toUpperCase());
+    try {
+        localStorage.setItem(symbol.toUpperCase(), symbol.toUpperCase());
+        return true;
+    }
+    catch (err) {
+        console.error(err);
+        return false;
+    }
+}
+
+export const checkIfItemInWatchList = async (company) => {
+    await getAllWatchlistItems();
+    const check = watchListItems.find((item) => item.symbol === company.toUpperCase());
+    const added = typeof (check) !== "undefined";
+    return added;
 }
 
 export const removeItemFromWatchList = (symbol) => {

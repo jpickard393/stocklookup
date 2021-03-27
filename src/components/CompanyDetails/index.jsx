@@ -9,7 +9,7 @@ const CompanyDetails = (props) => {
     return quote && (
         <Container className="company-details-container">
             <CompanyProfile symbol={symbol} submit={submit}></CompanyProfile>
-            <CompanyQuote quote={quote}></CompanyQuote>
+            <CompanyQuote quote={quote} symbol={symbol}></CompanyQuote>
         </Container>
     );
 }
