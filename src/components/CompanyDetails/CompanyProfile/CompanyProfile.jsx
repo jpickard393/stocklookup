@@ -4,6 +4,7 @@ import { Container } from "reactstrap";
 import getProfile from "../../../API/profileAPI";
 
 const CompanyProfile = (props) => {
+    const noImageUrl = "images/stockchart.png";
     const [profile, setProfile] = useState("");
 
     const getCompanyProfile = (symbol) => {
@@ -26,10 +27,7 @@ const CompanyProfile = (props) => {
                 </div>
             </div>
             <div className="cp-logo">
-                {profile.logo ?
-                    <img className="profile-logo" src={profile.logo} alt="logo"></img>
-                    : <div className="no-image">No Image Available</div>
-                }
+                <img className="profile-logo" src={profile.logo || noImageUrl} alt="logo"></img>
             </div>
             <div className="cp-details">
                 <div>

@@ -3,23 +3,27 @@ import getProfile from "../API/profileAPI";
 
 let watchListItems = [];
 
-export const addItemsToWatchList = (symbol) => {
-    localStorage.setItem(symbol, symbol);
+export const addItemToWatchList = (symbol) => {
+    localStorage.setItem(symbol.toUpperCase(), symbol.toUpperCase());
+}
+
+export const removeItemFromWatchList = (symbol) => {
+    localStorage.removeItem(symbol);
 }
 
 export const getAllWatchlistItems = async () => {
     let keys = Object.keys(localStorage);
     let len = keys.length;
+    watchListItems = [];
 
     while (len--) {
         const symbol = localStorage.getItem(keys[len]);
         watchListItems.push({
-            symbol: symbol,
+            symbol: symbol.toUpperCase(),
             price: await getCompanyQuote(symbol),
             imageUrl: await getCompanyImage(symbol)
         });
     }
-    console.log(watchListItems);
 
     return watchListItems;
 }

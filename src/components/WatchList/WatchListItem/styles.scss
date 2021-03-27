@@ -1,3 +1,37 @@
+@import "../../../styles/base/base";
 .watch-list-item-container {
     display:flex;
+    justify-content: space-between;
+    font-size: $normal-font-size;
+    margin-top:20px;
+
+    .logo {
+        width: 90px;
+        height: 60px;
+    }
+
+    .company-name-container {
+        .company-name {
+            margin: 10px;
+            color:rgb(6, 72, 6);
+            font-weight:bold;
+            
+        }
+    }
+
+    .price {
+        margin: 10px;
+    }
+
+    .remove-button-container {
+        margin-top: 7px;
+
+        .remove-button {
+        
+            width:25px;
+            height:25px;
+        }
+    }
+    
 }
+
