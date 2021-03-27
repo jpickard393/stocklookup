@@ -3,7 +3,7 @@ import './styles.scss';
 import MenuBar from "../src/components/Menubar/MenuBar";
 import QuoteEntryForm from "./components/QuoteEntryForm/QuoteEntryForm";
 import MarketNews from "./components/MarketNews/MarketNews";
-import WatchList from "./components/WatchList"
+import WatchList from "./components/WatchList/WatchList"
 import About from "./components/About/About";
 import { Container } from "reactstrap";
 import ErrorBoundry from "./ErrorBoundry";
