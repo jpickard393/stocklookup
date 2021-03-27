@@ -42,9 +42,6 @@ const QuoteEntryForm = () => {
             setValidationMessages([]);
             setSymbol(e.target.value); 
         }
-        else{
-            console.log("empty");
-        }
     };
 
     const validateInput = () => {

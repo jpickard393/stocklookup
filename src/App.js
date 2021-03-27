@@ -4,6 +4,7 @@ import MenuBar from "../src/components/Menubar/MenuBar";
 import QuoteEntryForm from "./components/QuoteEntryForm/QuoteEntryForm";
 import MarketNews from "./components/MarketNews/MarketNews";
 import WatchList from "./components/WatchList"
+import About from "./components/About/About";
 import { Container } from "reactstrap";
 import ErrorBoundry from "./ErrorBoundry";
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/QuoteEntryForm" exact component={QuoteEntryForm} />
       <Route path="/MarketNews" exact component={MarketNews} />
       <Route path="/WatchList" exact component={WatchList} />
+      <Route path="/About" exact component={About} />
     </Router>
   );
 }
