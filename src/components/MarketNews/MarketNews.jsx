@@ -19,7 +19,7 @@ class MarketNews extends Component {
     render() {
         return (this.state.marketNews.map((item) =>
             <Container className="market-news-container">
-                <MarketNewsItem id={item.id} headline={item.headline} image={item.image} summary={item.summary}></MarketNewsItem>
+                <MarketNewsItem id={item.id} headline={item.headline} image={item.image} summary={item.summary} url= {item.url}></MarketNewsItem>
             </Container>
         ));
     }

@@ -16,5 +16,6 @@ export const fetchData = (url) => {
         .catch(function (err) {
             // All went wrong
             console.warn("Something went wrong.", err);
+            throw (err);
         });
 };

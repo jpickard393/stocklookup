@@ -19,8 +19,8 @@
             justify-content: flex-start;
 
             .market-news-image {
-                width: 150px;
-                height:120px;
+                width: 180px;
+                height:130px;
 
                 @media (max-width: $medium-breakpoint) {
                     margin-top: 10px;
@@ -42,6 +42,7 @@
 
             .market-news-headline {
                 color:rgb(38, 47, 72);
+                font-size: $large-font-size;
             }
         }
     }

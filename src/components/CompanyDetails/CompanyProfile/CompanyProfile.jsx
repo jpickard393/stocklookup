@@ -19,10 +19,10 @@ const CompanyProfile = (props) => {
     return profile && (
         <Container className="company-profile-container">
             <div className="cp-title">
-                <h4 className="cp-company-name">{profile.name}</h4>
+                <h4 className="cp-company-name">{profile.name || props.symbol.toUpperCase()}</h4>
                 <div>
                     <span className="cd-label"><label>Symbol</label></span>
-                    <label>{profile.ticker}</label>
+                    <label>{profile.ticker || "N/A"}</label>
                 </div>
             </div>
             <div className="cp-logo">
@@ -34,15 +34,15 @@ const CompanyProfile = (props) => {
             <div className="cp-details">
                 <div>
                     <label className="cd-label">Exchange:</label>
-                    <label>{profile.exchange}</label>
+                    <label>{profile.exchange || "N/A"}</label>
                 </div>
                 <div>
                     <label className="cd-label">Country:</label>
-                    <label>{profile.country}</label>
+                    <label>{profile.country || "N/A"}</label>
                 </div>
                 <div>
                     <label className="cd-label">Mkt Capitalization:</label>
-                    <label>{profile.marketCapitalization}</label>
+                    <label>{profile.marketCapitalization || "N/A"}</label>
                 </div>
             </div>
 
