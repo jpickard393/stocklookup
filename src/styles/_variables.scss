@@ -1,21 +1,12 @@
-$small-mobile: 320px;
-$medium-mobile: 375px;
-$large-mobile: 411px;
-
-$max-width: 1856px;
+// Break points
 $medium-breakpoint: 600px;
 $large-breakpoint: 960px;
-$mlarge-breakpoint: 1025px;
-$xlarge-breakpoint: $max-width;
 
-$smaller-font-size: 12px;
+// Font sizes
 $small-font-size: 12px;
-$medium-font-size: 14px;
 $font-size: 16px;
 $normal-font-size: 18px;
 $large-font-size: 24px;
-$large-text-font-size: 28px;
-$xtra-large-font-size: 32px;
-$xtra-xtra-large-font-size: 46px;
 
+// Fonts
 $font-family: 'Roboto', sans-serif;

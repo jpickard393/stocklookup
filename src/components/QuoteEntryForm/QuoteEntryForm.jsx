@@ -70,7 +70,7 @@ const QuoteEntryForm = () => {
                     </div>
                 </div>
             </div>
-            <div className="validationMessage">{validationMessages.map((msg, id) => {
+            <div className="validation-message">{validationMessages.map((msg, id) => {
                 return <div key={id} className="validation-error-message">{msg}</div>})}
                 </div>
             {submitted ? (
