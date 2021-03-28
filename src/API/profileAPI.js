@@ -1,10 +1,10 @@
 import { fetchData } from "./fetchData";
 import { buildQuoteUrl } from "../API/buildURLs";
 
-const getProfile = (symbol) => {
+const getProfile = async (symbol) => {
     const urlAction = "stock/profile2";
     const url = buildQuoteUrl(symbol, urlAction);
-    return fetchData(url);
+    return await fetchData(url);
 }
 
 export default getProfile;

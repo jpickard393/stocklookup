@@ -21,7 +21,7 @@ const MenuBar = (props) => {
         <div>
             <Navbar className="navbar" dark expand="md">
                 <NavbarToggler onClick={toggle} />
-                <NavbarBrand className="brand" href="/">Stock Quotes</NavbarBrand>
+                <NavbarBrand className="brand" href="/">Stock Watch</NavbarBrand>
 
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="me-auto" navbar>

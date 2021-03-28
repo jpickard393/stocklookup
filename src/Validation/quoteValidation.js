@@ -10,8 +10,8 @@ export const validateAlphaOnly = (inputVal) => {
 
 export const validateSymbolLength = (inputVal) => {
     if (inputVal) {
-        const errorMsg = "Please enter a symbol of 4 characters only";
-        const isValid = inputVal.length === 4;
+        const errorMsg = "Please enter a symbol of 1 to 4 characters only";
+        const isValid = inputVal.length > 0 && inputVal.length < 5;
         return { valid: isValid, error: !isValid ? errorMsg : "" };
     }
 }
