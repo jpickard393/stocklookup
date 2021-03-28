@@ -9,9 +9,9 @@ export const addItemToWatchList = (symbol) => {
         return true;
     }
     catch (err) {
-        console.error(err);
-        return false;
+        console.log(err);
     }
+    return false;
 }
 
 export const checkIfItemInWatchList = async (company) => {
@@ -22,7 +22,12 @@ export const checkIfItemInWatchList = async (company) => {
 }
 
 export const removeItemFromWatchList = (symbol) => {
-    localStorage.removeItem(symbol);
+    try {
+        localStorage.removeItem(symbol);
+    }
+    catch (err) {
+        console.log(err);
+    }
 }
 
 export const getAllWatchlistItems = async () => {

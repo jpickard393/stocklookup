@@ -13,7 +13,8 @@ const WatchList = () => {
 
      const removeItem = async (symbol) => {
         removeItemFromWatchList(symbol);
-        getWatchListItems();
+        setWatchListItems([]);
+        await getWatchListItems();
         setCountItems(watchListItems.length);
     } 
 
