@@ -17,11 +17,17 @@ class MarketNews extends Component {
     }
 
     render() {
-        return (this.state.marketNews.map((item, index) =>
-            <Container className="market-news-container">
-                <MarketNewsItem key={index} headline={item.headline} image={item.image} summary={item.summary} url= {item.url}></MarketNewsItem>
+        return (
+            <Container className="market-news-contaner">
+                <div className="market-news-title"><h3>Market News</h3></div>
+                {this.state.marketNews.map((item, index) =>
+                    <div>
+                        <MarketNewsItem key={index} headline={item.headline} image={item.image} summary={item.summary} url= {item.url}></MarketNewsItem>
+                    </div>
+            )}
             </Container>
-        ));
+            );
+        
     }
 }
 

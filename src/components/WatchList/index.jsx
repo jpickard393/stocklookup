@@ -33,7 +33,6 @@ const WatchList = () => {
                 <h3>My Watch List</h3>
             </div>
             <div><h3 className="loading-message">{loadingMessage}</h3></div>
-            <div className="loading-message"></div>
             {watchListItems.map((item, index) => {
                 return <WatchListItem key={index} logoUrl={item.imageUrl || noImageUrl} companySymbol={item.symbol} price={item.price} removeItem={removeItem}></WatchListItem>
             })}
