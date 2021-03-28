@@ -30,7 +30,7 @@ const QuoteEntryForm = () => {
             setQuote(quote) 
         } else {
             setQuote("");
-            setSearchResultMessage("Nothing Found for that symbol");
+            setSearchResultMessage("Nothing found for that symbol");
         }
     }
 
