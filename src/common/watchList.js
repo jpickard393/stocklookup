@@ -5,7 +5,7 @@ let watchListItems = [];
 
 export const addItemToWatchList = (symbol) => {
     try {
-        localStorage.setItem(symbol.toUpperCase(), symbol.toUpperCase());
+        localStorage.setItem(symbol, symbol);
         return true;
     }
     catch (err) {
@@ -16,9 +16,9 @@ export const addItemToWatchList = (symbol) => {
 
 export const checkIfItemInWatchList = async (company) => {
     await getAllWatchlistItems();
-    const check = watchListItems.find((item) => item.symbol === company.toUpperCase());
-    const added = typeof (check) !== "undefined";
-    return added;
+    const check = watchListItems.find(
+        (item) => item.symbol === company);
+    return typeof (check) !== "undefined";
 }
 
 export const removeItemFromWatchList = (symbol) => {
@@ -33,7 +33,7 @@ export const getAllWatchlistItems = async () => {
     while (len--) {
         const symbol = localStorage.getItem(keys[len]);
         watchListItems.push({
-            symbol: symbol.toUpperCase(),
+            symbol: symbol,
             price: await getCompanyQuote(symbol),
             imageUrl: await getCompanyImage(symbol)
         });
@@ -43,9 +43,9 @@ export const getAllWatchlistItems = async () => {
 }
 
 const getCompanyQuote = async (symbol) => {
-    return await getQuote(symbol.toUpperCase()).then((quote) => quote.c);
+    return await getQuote(symbol).then((quote) => quote.c);
 }
 
 const getCompanyImage = async (symbol) => {
-    return await getProfile(symbol.toUpperCase()).then((profile) => profile.logo);
+    return await getProfile(symbol).then((profile) => profile.logo);
 }

@@ -16,7 +16,12 @@
 .profile-logo {
     margin-top: 10px;
     margin-bottom: 10px;
-    height:125px;
+
+    @media (max-width: $medium-breakpoint) {
+        max-height:100px;
+        max-width: 150px;
+    }
+    
 }
 
 .no-image {

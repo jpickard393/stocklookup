@@ -4,6 +4,8 @@
     justify-content: space-between;
     font-size: $normal-font-size;
     margin-top:20px;
+    padding-bottom:10px;
+    border-bottom:1px solid gray;
 
     .logo {
         width: 90px;
@@ -15,7 +17,6 @@
             margin: 10px;
             color:rgb(6, 72, 6);
             font-weight:bold;
-            
         }
     }
 
@@ -24,14 +25,12 @@
     }
 
     .remove-button-container {
-        margin-top: 7px;
+        margin-top: 10px;
 
         .remove-button {
-        
-            width:25px;
-            height:25px;
+            width:15px;
+            height:15px;
         }
     }
-    
 }
 

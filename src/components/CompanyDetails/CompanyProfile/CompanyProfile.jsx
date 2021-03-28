@@ -27,7 +27,7 @@ const CompanyProfile = (props) => {
                 </div>
             </div>
             <div className="cp-logo">
-                <img className="profile-logo" src={profile.logo || noImageUrl} alt="logo"></img>
+                <img className="profile-logo img-fluid" src={profile.logo || noImageUrl} alt="logo"></img>
             </div>
             <div className="cp-details">
                 <div>

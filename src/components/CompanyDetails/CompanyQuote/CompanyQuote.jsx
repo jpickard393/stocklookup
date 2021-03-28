@@ -51,8 +51,12 @@ const CompanyQuote = ({quote, symbol}) => {
                     </div>
                     <div className="add-to-watchlist">
                         <div>
-                            <img className="add-button" src="/images/addbutton.jpeg" alt="add button" onClick={addSymbolToWatchList}></img> 
-                            {itemAdded ? "In your to watch list" : "Add stock to watch list"}
+                            {!itemAdded ? (
+                                <div>
+                                <img className="add-button" src="/images/addbutton.jpeg" alt="add button" onClick={addSymbolToWatchList}></img>
+                                Add stock to watch list
+                                </div>
+                            ) : "In your to watch list"}
                         </div>
                     </div>
                 </div>

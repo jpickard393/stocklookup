@@ -17,7 +17,7 @@ const QuoteEntryForm = () => {
         if(validateInput()){
             setQuote("");
             setSearchResultMessage("Searching.....");
-            getQuote(symbol.toUpperCase()).then((quote) => checkSymbolResult(quote));
+            getQuote(symbol).then((quote) => checkSymbolResult(quote));
             setSubmitted(true);
         } else{
             setSubmitted(false);
@@ -36,11 +36,11 @@ const QuoteEntryForm = () => {
 
     const handleSymbolChange = (e) => {
         const input = e.target.value;
-        if(input.length > 0){
+        if(input.trim().length > 0){
             setDisableSubmit(false);
             setSubmitted(false);
             setValidationMessages([]);
-            setSymbol(e.target.value); 
+            setSymbol(input.toUpperCase()); 
         }
     };
 
