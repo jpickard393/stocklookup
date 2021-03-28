@@ -27,6 +27,9 @@ const NavBarToggler = (props) => {
                         <NavItem>
                             <NavLink><Link to="/WatchList/" className="NavLink">My Watch List</Link></NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink><Link to="/About" className="NavLink">About</Link></NavLink>
+                        </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>

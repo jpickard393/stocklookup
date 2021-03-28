@@ -4,6 +4,7 @@ import { Container } from "reactstrap";
 import getProfile from "../../../API/profileAPI";
 
 const CompanyProfile = (props) => {
+    const noImageUrl = "images/stockchart.png";
     const [profile, setProfile] = useState("");
 
     const getCompanyProfile = (symbol) => {
@@ -19,30 +20,27 @@ const CompanyProfile = (props) => {
     return profile && (
         <Container className="company-profile-container">
             <div className="cp-title">
-                <h4 className="cp-company-name">{profile.name}</h4>
+                <h4 className="cp-company-name">{profile.name || props.symbol.toUpperCase()}</h4>
                 <div>
                     <span className="cd-label"><label>Symbol</label></span>
-                    <label>{profile.ticker}</label>
+                    <label>{profile.ticker || "N/A"}</label>
                 </div>
             </div>
             <div className="cp-logo">
-                {profile.logo ?
-                    <img className="profile-logo" src={profile.logo} alt="logo"></img>
-                    : <div className="no-image">No Image Available</div>
-                }
+                <img className="profile-logo img-fluid" src={profile.logo || noImageUrl} alt="logo"></img>
             </div>
             <div className="cp-details">
                 <div>
                     <label className="cd-label">Exchange:</label>
-                    <label>{profile.exchange}</label>
+                    <label>{profile.exchange || "N/A"}</label>
                 </div>
                 <div>
                     <label className="cd-label">Country:</label>
-                    <label>{profile.country}</label>
+                    <label>{profile.country || "N/A"}</label>
                 </div>
                 <div>
                     <label className="cd-label">Mkt Capitalization:</label>
-                    <label>{profile.marketCapitalization}</label>
+                    <label>{profile.marketCapitalization || "N/A"}</label>
                 </div>
             </div>
 
