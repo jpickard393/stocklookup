@@ -65,7 +65,8 @@ const CompanyQuote = ({quote, symbol}) => {
     );
 }
 CompanyQuote.propTypes = {
-    quote: PropTypes.object
+    quote: PropTypes.object,
+    symbol: PropTypes.string
 }
 
 export default CompanyQuote;

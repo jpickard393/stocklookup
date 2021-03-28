@@ -1,15 +1,16 @@
 @import "../../styles/base/base";
 .navbar {
-    background-color:rgb(68, 74, 157);
+    background-color:rgb(47, 85, 126);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 
     .NavLink {
         color:white;
+        margin-right:10px;
     }
 
     .brand {
-        color:rgb(237, 237, 25);
-        font-family:Verdana, Geneva, Tahoma, sans-serif
+        color:rgb(255, 255, 255);
+        font-weight:bolder;
+        margin-right:50px;
     }
-
-    
 }

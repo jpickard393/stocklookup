@@ -18,6 +18,7 @@ const WatchList = () => {
     } 
 
     useEffect(() => {
+        setWatchListItems([]);
         setLoadingMessage("Loading ...");
         getWatchListItems();
     },[countItems]);
