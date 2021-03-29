@@ -22,6 +22,7 @@ const QuoteEntryForm = () => {
         } else{
             setSubmitted(false);
         }
+        setDisableSubmit(false);
     };
 
     const checkSymbolResult = (quote) => {
@@ -41,11 +42,17 @@ const QuoteEntryForm = () => {
             setSubmitted(false);
             setValidationMessages([]);
             setSymbol(input.toUpperCase()); 
+        } else{
+            setDisableSubmit(true);
         }
+
     };
 
     const validateInput = () => {
-        const validationCheck = [validateAlphaOnly(symbol.trim()), validateSymbolLength(symbol.trim())];
+        const userInput = symbol.trim();
+        if(!userInput.length > 0) return false;
+
+        const validationCheck = [validateAlphaOnly(userInput), validateSymbolLength(userInput)];
         const valid = validationCheck[0].valid && validationCheck[1].valid;
         let errMessages = [];
 
