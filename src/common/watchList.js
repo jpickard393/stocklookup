@@ -1,8 +1,6 @@
 import getQuote from "../API/quoteAPI";
 import getProfile from "../API/profileAPI";
 
-let watchListItems = [];
-
 export const addItemToWatchList = (symbol) => {
     try {
         localStorage.setItem(symbol, symbol);
@@ -15,8 +13,8 @@ export const addItemToWatchList = (symbol) => {
 }
 
 export const checkIfItemInWatchList = async (company) => {
-    await getAllWatchlistItems();
-    const check = watchListItems.find(
+    const localStoreItems = await getAllWatchlistItems(true);
+    const check = localStoreItems.find(
         (item) => item.symbol === company);
     return typeof (check) !== "undefined";
 }
@@ -31,26 +29,26 @@ export const removeItemFromWatchList = (symbol) => {
     }
 }
 
-export const getAllWatchlistItems = async () => {
+export const getAllWatchlistItems = async (symbolOnly) => {
     let keys = Object.keys(localStorage);
     let len = keys.length;
-    watchListItems = [];
+    let watchListItems = [];
 
     try {
         while (len--) {
             const symbol = localStorage.getItem(keys[len]);
             watchListItems.push({
                 symbol: symbol,
-                price: await getCompanyQuote(symbol),
-                imageUrl: await getCompanyImage(symbol)
+                price: !symbolOnly && await getCompanyQuote(symbol),
+                imageUrl: !symbolOnly && await getCompanyImage(symbol)
             });
         }
-        return watchListItems;
     }
     catch (err) {
         console.log(err);
         throw new Error(err);
     }
+    return watchListItems;
 }
 
 const getCompanyQuote = async (symbol) => {
