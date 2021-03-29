@@ -25,7 +25,7 @@ const WatchList = () => {
     },[countItems]);
 
     const getWatchListItems = async () => {
-        setWatchListItems(await getAllWatchlistItems());
+        setWatchListItems(await getAllWatchlistItems(false));
         setLoadingMessage("");
     }
 
