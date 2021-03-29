@@ -3,14 +3,7 @@ import getProfile from "../API/profileAPI";
 
 // put item in local store
 export const addItemToWatchList = (symbol) => {
-    try {
-        localStorage.setItem(symbol, symbol);
-        return true;
-    }
-    catch (err) {
-        console.log(err);
-        throw new Error(err);
-    }
+    localStorage.setItem(symbol, symbol);
 }
 
 // Search browser local store for symbol
@@ -22,16 +15,11 @@ export const checkIfItemInWatchList = async (company) => {
 }
 
 export const removeItemFromWatchList = (symbol) => {
-    try {
-        localStorage.removeItem(symbol);
-    }
-    catch (err) {
-        console.log(err);
-        throw new Error(err);
-    }
+    localStorage.removeItem(symbol);
 }
 
 export const getAllWatchlistItems = async (symbolOnly) => {
+
     let keys = Object.keys(localStorage);
     let len = keys.length;
     let watchListItems = [];
@@ -47,28 +35,15 @@ export const getAllWatchlistItems = async (symbolOnly) => {
         }
     }
     catch (err) {
-        console.log(err);
         throw new Error(err);
     }
     return watchListItems;
-}
+};
 
 const getCompanyQuote = async (symbol) => {
-    try {
-        return await getQuote(symbol).then((quote) => quote.c);
-    }
-    catch (err) {
-        console.log(err);
-        throw new Error(err);
-    }
+    return await getQuote(symbol).then((quote) => quote.c);
 }
 
 const getCompanyImage = async (symbol) => {
-    try {
-        return await getProfile(symbol).then((profile) => profile.logo);
-    }
-    catch (err) {
-        console.log(err);
-        throw new Error(err);
-    }
+    return await getProfile(symbol).then((profile) => profile.logo);
 }

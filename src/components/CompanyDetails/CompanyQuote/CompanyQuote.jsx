@@ -8,9 +8,8 @@ const CompanyQuote = ({quote, symbol}) => {
     const [itemAdded, setItemAdded] = useState();
     
     const addSymbolToWatchList = async () => {
-        if(addItemToWatchList(symbol)){
-            setItemAdded(true);
-        }
+        addItemToWatchList(symbol);
+        setItemAdded(await checkIfItemInWatchList(symbol));
     }
 
     useEffect(() => {

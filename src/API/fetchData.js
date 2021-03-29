@@ -10,12 +10,8 @@ export const fetchData = async (url) => {
                 return Promise.reject(response);
             }
         })
-        .then((data) => {
-            return data;
-        })
         .catch(function (err) {
-            // All went wrong
-            console.warn("Something went wrong.", err);
+            console.error("Error in fetching data from finhub API.", err);
             throw (err);
         });
 };
