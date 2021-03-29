@@ -14,14 +14,14 @@ Enter the stock market symbol for any US stock market listed company, into the s
 From this screen you are able to add the company to your watch list.
 
 
-Example market symbols to use
+Example market symbols to use:
 
-Company	        Symbol
-Microsoft	    MSFT
-Tesla	        TSLA
-Salesforce	    CRM
-Service now	    NOW
-Nvidia	        NVDA
-Facebook	    FB
-Apple	        AAPL
-Amazon	        AMZN
+Company.     Symbol
+Microsoft:   MSFT
+Tesla:       TSLA
+Salesforce:  CRM
+Service now: NOW
+Nvidia:      NVDA
+Facebook:    FB
+Apple:       AAPL
+Amazon:      AMZN
