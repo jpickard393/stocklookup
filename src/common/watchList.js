@@ -1,6 +1,7 @@
 import getQuote from "../API/quoteAPI";
 import getProfile from "../API/profileAPI";
 
+// put item in local store
 export const addItemToWatchList = (symbol) => {
     try {
         localStorage.setItem(symbol, symbol);
@@ -12,6 +13,7 @@ export const addItemToWatchList = (symbol) => {
     }
 }
 
+// Search browser local store for symbol
 export const checkIfItemInWatchList = async (company) => {
     const localStoreItems = await getAllWatchlistItems(true);
     const check = localStoreItems.find(
