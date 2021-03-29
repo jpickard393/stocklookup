@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./styles.scss";
 class ErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
@@ -7,13 +7,11 @@ class ErrorBoundary extends React.Component {
     }
 
     static getDerivedStateFromError(error) {
-        // Update state to trigger fallback UI
         return { hasError: true };
     }
     render() {
         if (this.state.hasError) {
-            // Render fallback UI
-            return <div><h1>Something went wrong.</h1></div>;
+            return <div className="boundryError"><h1>Something went wrong.</h1></div>;
         }
 
         return this.props.children;

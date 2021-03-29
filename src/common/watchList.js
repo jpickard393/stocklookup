@@ -10,8 +10,8 @@ export const addItemToWatchList = (symbol) => {
     }
     catch (err) {
         console.log(err);
+        throw new Error(err);
     }
-    return false;
 }
 
 export const checkIfItemInWatchList = async (company) => {
@@ -27,6 +27,7 @@ export const removeItemFromWatchList = (symbol) => {
     }
     catch (err) {
         console.log(err);
+        throw new Error(err);
     }
 }
 
@@ -35,22 +36,39 @@ export const getAllWatchlistItems = async () => {
     let len = keys.length;
     watchListItems = [];
 
-    while (len--) {
-        const symbol = localStorage.getItem(keys[len]);
-        watchListItems.push({
-            symbol: symbol,
-            price: await getCompanyQuote(symbol),
-            imageUrl: await getCompanyImage(symbol)
-        });
+    try {
+        while (len--) {
+            const symbol = localStorage.getItem(keys[len]);
+            watchListItems.push({
+                symbol: symbol,
+                price: await getCompanyQuote(symbol),
+                imageUrl: await getCompanyImage(symbol)
+            });
+        }
+        return watchListItems;
     }
-
-    return watchListItems;
+    catch (err) {
+        console.log(err);
+        throw new Error(err);
+    }
 }
 
 const getCompanyQuote = async (symbol) => {
-    return await getQuote(symbol).then((quote) => quote.c);
+    try {
+        return await getQuote(symbol).then((quote) => quote.c);
+    }
+    catch (err) {
+        console.log(err);
+        throw new Error(err);
+    }
 }
 
 const getCompanyImage = async (symbol) => {
-    return await getProfile(symbol).then((profile) => profile.logo);
+    try {
+        return await getProfile(symbol).then((profile) => profile.logo);
+    }
+    catch (err) {
+        console.log(err);
+        throw new Error(err);
+    }
 }

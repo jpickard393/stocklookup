@@ -1,2 +1,7 @@
 @import "./styles/base/base";
 @import "./styles/variables";
+
+.boundryError {
+    display: flex;
+    align-items: center;
+}
