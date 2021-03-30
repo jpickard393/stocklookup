@@ -22,6 +22,7 @@ const QuoteEntryForm = () => {
         } else{
             setSubmitted(false);
         }
+        setDisableSubmit(false);
     };
 
     const checkSymbolResult = (quote) => {
@@ -30,7 +31,7 @@ const QuoteEntryForm = () => {
             setQuote(quote) 
         } else {
             setQuote("");
-            setSearchResultMessage("Nothing Found for that symbol");
+            setSearchResultMessage("Nothing found for that symbol");
         }
     }
 
@@ -41,11 +42,17 @@ const QuoteEntryForm = () => {
             setSubmitted(false);
             setValidationMessages([]);
             setSymbol(input.toUpperCase()); 
+        } else{
+            setDisableSubmit(true);
         }
+
     };
 
     const validateInput = () => {
-        const validationCheck = [validateAlphaOnly(symbol.trim()), validateSymbolLength(symbol.trim())];
+        const userInput = symbol.trim();
+        if(!userInput.length > 0) return false;
+
+        const validationCheck = [validateAlphaOnly(userInput), validateSymbolLength(userInput)];
         const valid = validationCheck[0].valid && validationCheck[1].valid;
         let errMessages = [];
 
@@ -70,7 +77,7 @@ const QuoteEntryForm = () => {
                     </div>
                 </div>
             </div>
-            <div className="validationMessage">{validationMessages.map((msg, id) => {
+            <div className="validation-message">{validationMessages.map((msg, id) => {
                 return <div key={id} className="validation-error-message">{msg}</div>})}
                 </div>
             {submitted ? (

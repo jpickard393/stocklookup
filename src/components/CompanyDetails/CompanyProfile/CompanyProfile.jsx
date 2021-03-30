@@ -1,9 +1,10 @@
 import { React, useEffect, useState } from 'react';
-import "./styles.scss";
+import PropTypes from "prop-types"
 import { Container } from "reactstrap";
 import getProfile from "../../../API/profileAPI";
+import "./styles.scss";
 
-const CompanyProfile = (props) => {
+const CompanyProfile = ({symbol}) => {
     const noImageUrl = "images/stockchart.png";
     const [profile, setProfile] = useState("");
 
@@ -12,15 +13,15 @@ const CompanyProfile = (props) => {
     };
 
     useEffect(() => {
-        if (props.symbol) {
-            getCompanyProfile(props.symbol);
+        if (symbol) {
+            getCompanyProfile(symbol);
         }
-    }, [props.symbol]);
+    }, [symbol]);
 
     return profile && (
         <Container className="company-profile-container">
             <div className="cp-title">
-                <h4 className="cp-company-name">{profile.name || props.symbol.toUpperCase()}</h4>
+                <h4 className="cp-company-name">{profile.name || symbol.toUpperCase()}</h4>
                 <div>
                     <span className="cd-label"><label>Symbol</label></span>
                     <label>{profile.ticker || "N/A"}</label>
@@ -47,5 +48,9 @@ const CompanyProfile = (props) => {
 
         </Container>
     );
+}
+
+CompanyProfile.propTypes = {
+    symbol: PropTypes.string
 }
 export default CompanyProfile

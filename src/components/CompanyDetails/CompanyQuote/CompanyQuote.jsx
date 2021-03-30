@@ -6,10 +6,10 @@ import { addItemToWatchList, checkIfItemInWatchList } from "../../../common/watc
 
 const CompanyQuote = ({quote, symbol}) => {
     const [itemAdded, setItemAdded] = useState();
+    
     const addSymbolToWatchList = async () => {
-        if(addItemToWatchList(symbol)){
-            setItemAdded(true);
-        }
+        addItemToWatchList(symbol);
+        setItemAdded(await checkIfItemInWatchList(symbol));
     }
 
     useEffect(() => {
@@ -56,7 +56,7 @@ const CompanyQuote = ({quote, symbol}) => {
                                 <img className="add-button" src="/images/addbutton.jpeg" alt="add button" onClick={addSymbolToWatchList}></img>
                                 Add stock to watch list
                                 </div>
-                            ) : "In your to watch list"}
+                            ) :  <div><img className="add-button" src="/images/tick.png" alt="tick"></img>In your watch list</div>}
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,8 @@ const CompanyQuote = ({quote, symbol}) => {
     );
 }
 CompanyQuote.propTypes = {
-    quote: PropTypes.object
+    quote: PropTypes.object,
+    symbol: PropTypes.string
 }
 
 export default CompanyQuote;

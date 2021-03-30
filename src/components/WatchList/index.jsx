@@ -13,17 +13,19 @@ const WatchList = () => {
 
      const removeItem = async (symbol) => {
         removeItemFromWatchList(symbol);
-        getWatchListItems();
+        setWatchListItems([]);
+        await getWatchListItems();
         setCountItems(watchListItems.length);
     } 
 
     useEffect(() => {
+        setWatchListItems([]);
         setLoadingMessage("Loading ...");
         getWatchListItems();
     },[countItems]);
 
     const getWatchListItems = async () => {
-        setWatchListItems(await getAllWatchlistItems());
+        setWatchListItems(await getAllWatchlistItems(false));
         setLoadingMessage("");
     }
 
