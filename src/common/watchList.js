@@ -15,19 +15,16 @@ export const checkIfItemInWatchList = async (company) => {
 }
 
 export const removeItemFromWatchList = (symbol) => {
-    debugger;
     localStorage.removeItem(symbol);
 }
 
 export const getAllWatchlistItems = async (symbolOnly) => {
     const localStoreArray = Object.keys(localStorage);
-    let watchList = await localStoreArray.map(async (symbol) => {
-        let obj = {};
-        obj.symbol = symbol;
-        obj.price = !symbolOnly && await getCompanyQuote(symbol);
-        obj.imageUrl = !symbolOnly && await getCompanyImage(symbol);
-        return obj;
-    });
+    const watchList = localStoreArray.map(async (symbol) => ({
+        symbol,
+        price: !symbolOnly && await getCompanyQuote(symbol),
+        imageUrl: !symbolOnly && await getCompanyImage(symbol)
+    }));
     return Promise.all(watchList);
 };
 
