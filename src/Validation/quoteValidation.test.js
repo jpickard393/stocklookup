@@ -24,12 +24,21 @@ describe('validateSymbolLength', () => {
         expect(testLength.error).toBe("Please enter a symbol of 1 to 4 characters only");
     });
 
+    test('should return valid: false and Please enter a value', () => {
+        const validateLength = jest.fn(validateSymbolLength);
+        const testLength = validateLength("");
+        expect(testLength.valid).toBe(false);
+        expect(testLength.error).toBe("Please enter a value");
+    });
+
     test('should return valid: true and no error message', () => {
         const validateLength = jest.fn(validateSymbolLength);
         const testLength = validateLength("goog");
         expect(testLength.valid).toBe(true);
         expect(testLength.error).toBe("");
     });
+
+
 });
 
 
