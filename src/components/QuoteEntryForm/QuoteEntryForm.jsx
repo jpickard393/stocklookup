@@ -87,7 +87,7 @@ const QuoteEntryForm = () => {
           <div className="input-group-append">
             <form onSubmit={onFormSubmit}>
               <button
-                className="btn btn-secondary"
+                className="btn btn-primary"
                 type="submit"
                 disabled={disableSubmit}
               >
